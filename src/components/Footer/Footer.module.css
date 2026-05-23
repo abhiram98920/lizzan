@@ -1,0 +1,69 @@
+.footer {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=2000');
+  background-size: cover; background-position: center; background-attachment: fixed;
+  color: #fff;
+  padding: 100px 0 40px;
+}
+.footer::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(to bottom, rgba(3, 15, 20, 1) 0%, rgba(3, 19, 24, 0.95) 20%, rgba(3, 19, 24, 0.95) 100%);
+}
+
+.inner {
+  position: relative; z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 80px;
+}
+
+.brandCol { max-width: 380px; }
+.logo { height: 48px; width: auto; margin-bottom: 24px; filter: brightness(0) invert(1); opacity: 0.9; }
+.desc { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,.5); margin-bottom: 32px; }
+
+.socials { display: flex; gap: 20px; }
+.socials a {
+  color: #fff; font-size: 0.85rem; font-weight: 700; text-decoration: none;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: color .2s;
+}
+.socials a:hover { color: #D4AF37; }
+
+.linkGroup {
+  display: flex; gap: 80px; flex: 1; justify-content: flex-end;
+}
+
+.col h4 {
+  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #D4AF37; margin-bottom: 24px;
+}
+
+.col ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.col ul a {
+  color: rgba(255,255,255,.6); text-decoration: none; font-size: 0.95rem; font-weight: 500;
+  transition: color .2s, transform .2s; display: inline-block;
+}
+.col ul a:hover { color: #fff; transform: translateX(4px); }
+
+.bottom {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto; padding: 40px 40px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.85rem; color: rgba(255,255,255,.4); font-weight: 500;
+}
+
+@media(max-width: 1024px) {
+  .inner { flex-direction: column; gap: 60px; }
+  .linkGroup { justify-content: flex-start; gap: 60px; flex-wrap: wrap; }
+}
+@media(max-width: 768px) {
+  .footer { padding: 80px 0 32px; }
+  .inner { padding: 0 20px; gap: 48px; margin-bottom: 60px; }
+  .linkGroup { gap: 40px; flex-direction: column; }
+  .bottom { padding: 32px 20px 0; flex-direction: column; gap: 16px; text-align: center; }
+}

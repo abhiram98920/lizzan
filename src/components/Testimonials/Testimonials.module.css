@@ -1,0 +1,46 @@
+.section { 
+  position: relative; padding: 160px 0; color: #fff; 
+  background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2000');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.section::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(4, 20, 26, 0.85);
+}
+.inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.header { text-align: center; margin-bottom: 80px; }
+.eyebrow { display: inline-block; color: #D4AF37; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+.title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; color: #fff; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+.card {
+  position: relative; background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 48px 40px; border-radius: 24px;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-8px); border-color: rgba(212,175,55,0.3); background: rgba(212,175,55,0.05); }
+
+.quoteMark {
+  position: absolute; top: 16px; right: 24px;
+  font-size: 8rem; font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.03);
+  line-height: 1; pointer-events: none;
+}
+
+.stars { color: #D4AF37; font-size: 1.1rem; margin-bottom: 24px; letter-spacing: 2px; }
+.text { position: relative; z-index: 2; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 40px; font-weight: 300; flex: 1; }
+
+.author { display: flex; align-items: center; gap: 16px; position: relative; z-index: 2; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.15); color: #D4AF37; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; border: 1px solid rgba(212,175,55,0.4); flex-shrink: 0; }
+.name { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.loc { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+
+@media(max-width: 900px) { .grid { grid-template-columns: 1fr; gap: 24px; } }
+@media(max-width: 768px) {
+  .section { padding: 100px 0; }
+  .inner { padding: 0 24px; }
+  .card { padding: 40px 32px; }
+}

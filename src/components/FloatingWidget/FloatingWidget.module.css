@@ -1,0 +1,82 @@
+.widget {
+  position: fixed;
+  right: 24px;
+  bottom: 40px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(8,43,54, 0.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,175,55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.item::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: linear-gradient(135deg, #D4AF37, #F0D682);
+  opacity: 0; transition: opacity 0.3s ease; z-index: 0;
+}
+
+.icon { 
+  position: relative; z-index: 1; 
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+.item:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(212,175,55,0.3);
+  border-color: transparent;
+}
+.item:hover::before { opacity: 1; }
+.item:hover .icon { transform: scale(1.15); }
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 16px);
+  background: #082B36;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.tooltip::after {
+  content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%) rotate(45deg);
+  width: 8px; height: 8px; background: #082B36;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.item:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media(max-width: 768px) {
+  .widget { right: 12px; bottom: 12px; gap: 8px; flex-direction: row; }
+  .item { width: 44px; height: 44px; font-size: 1.1rem; }
+  .tooltip { display: none; }
+}

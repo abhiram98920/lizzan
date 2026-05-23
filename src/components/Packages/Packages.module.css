@@ -1,0 +1,45 @@
+.section { 
+  position: relative; padding: 160px 0; color: #fff; 
+  background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.section::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(5, 26, 33, 0.85);
+}
+.inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.header { text-align: center; margin-bottom: 64px; }
+.eyebrow { display: inline-block; color: #D4AF37; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; }
+.title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; color: #fff; margin-bottom: 20px; }
+.sub { max-width: 600px; margin: 0 auto; font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,.5); }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pkgCard {
+  position: relative; border-radius: 24px; overflow: hidden;
+  min-height: 480px; cursor: pointer;
+  background-size: cover; background-position: center;
+  transition: transform .4s ease, box-shadow .4s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
+}
+.pkgCard:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(0,0,0,.5); }
+.pkgOverlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(8,43,54,0.3) 0%, rgba(8,43,54,0.95) 80%);
+  transition: opacity .4s, background .4s;
+}
+.pkgCard:hover .pkgOverlay { background: linear-gradient(180deg, rgba(8,43,54,0.4) 0%, rgba(8,43,54,0.98) 90%); }
+.pkgContent {
+  position: relative; z-index: 2; padding: 48px;
+  display: flex; flex-direction: column; height: 100%;
+}
+.pkgBadge { align-self: flex-start; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); color: #F0D682; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+.pkgTitle { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.1; }
+.pkgDesc { font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,.7); margin-bottom: 32px; max-width: 400px; }
+.pkgRoutes { list-style: none; margin-bottom: 40px; display: flex; flex-direction: column; gap: 12px; }
+.pkgRoutes li { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,.8); cursor: pointer; transition: transform 0.3s ease, color 0.3s ease; }
+.pkgRoutes li:hover { transform: translateX(8px); color: #fff; }
+.routeDot { width: 8px; height: 8px; border-radius: 50%; background: #D4AF37; transition: width 0.3s ease, background 0.3s ease, border-radius 0.3s ease; }
+.pkgRoutes li:hover .routeDot { width: 20px; border-radius: 4px; background: #F0D682; }
+.pkgCta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: #D4AF37; color: #082B36; text-decoration: none; font-weight: 800; font-size: 0.9rem; padding: 14px 28px; border-radius: 50px; transition: background .2s, transform .2s; align-self: flex-start; }
+.pkgCta:hover { background: #F0D682; transform: translateX(4px); }
+@media(max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+@media(max-width: 768px) { .section { padding: 80px 0; } .inner { padding: 0 20px; } .pkgContent { padding: 32px 24px; } }
