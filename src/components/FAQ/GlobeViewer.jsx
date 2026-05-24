@@ -21,7 +21,7 @@ class ErrorBoundary extends React.Component {
 
 function GlobeModel() {
   const group = useRef()
-  const { scene } = useGLTF('/model.glb')
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}model.glb`)
   const texture = useTexture('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
 
   // Flip texture if necessary, usually spherical maps might need it
