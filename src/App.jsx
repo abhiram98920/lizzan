@@ -48,7 +48,7 @@ export default function App() {
     const tlGlobal = gsap.timeline({
       scrollTrigger: {
         trigger: document.body,
-        start: () => `${window.innerHeight * 7}px top`,
+        start: () => `${window.innerHeight * 3.5}px top`,
         end: 'bottom bottom',
         scrub: 1,
       }

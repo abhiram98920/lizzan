@@ -81,10 +81,26 @@
   transform: translateY(-50%);
   pointer-events: auto;
   z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media(max-width: 1024px) {
+  .clocksWrap {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 32px;
+    flex-direction: row;
+  }
 }
 
 @media(max-width: 768px) {
-  .clocksWrap { display: none; } /* Hide on mobile screens where they overlap */
+  .clocksWrap {
+    display: none;
+  }
 }
 
 .heroPill {
@@ -99,14 +115,16 @@
 }
 
 .heroTitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: clamp(3.2rem, 7vw, 6.5rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  color: #fff;
-  text-shadow: 0 4px 32px rgba(0,0,0,0.5);
-  margin-bottom: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #FFF 0%, #F0D682 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
 }
 
 /* Premium gradient text with stylish italic serif */

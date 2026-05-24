@@ -6,6 +6,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Logo from '../Logo'
 import WorldClocks from '../WorldClocks/WorldClocks'
+import WeatherWidget from '../WeatherWidget/WeatherWidget'
 import ContactMap from '../ContactMap/ContactMap'
 import mapImg   from '../../assets/layer1.png'
 import s from './ScrollScene.module.css'
@@ -161,9 +162,8 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
         <section ref={heroRef} className={`${s.panel} ${s.heroPanel}`}>
           <div className={s.heroContent}>
             <h1 className={s.heroTitle}>
-              Travel<br />
-              <span className={s.heroStroke}>Beyond</span><br />
-              Horizons
+              Journey Beyond<br />
+              The Ordinary
             </h1>
             <p className={s.heroSub}>
               Plan, explore, and experience the world — with smart, seamless
@@ -185,8 +185,10 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
               <span className={s.nudgeText}>Scroll to discover</span>
             </div>
           </div>
+          {/* RIGHT CLOCKS & WEATHER */}
           <div className={s.clocksWrap}>
             <WorldClocks />
+            <WeatherWidget />
           </div>
         </section>
 
