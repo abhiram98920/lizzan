@@ -233,7 +233,7 @@
 
 .aboutOverlay {
   background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 40%, rgba(6,33,42,0.2) 100%);
-  padding: 100px 48px 40px;
+  padding: 60px 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -257,7 +257,7 @@
 
 .servicesOverlay {
   background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 50%, rgba(6,33,42,0.3) 100%);
-  padding: 100px 48px 40px;
+  padding: 60px 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -300,7 +300,11 @@
 
 /* ──────────────────── CONTACT CARD ─────────────────────────────── */
 .contactCard {
-  background: linear-gradient(145deg, rgba(6,33,42,0.98) 0%, rgba(4,22,28,0.92) 100%);
+  background-image: 
+    linear-gradient(145deg, rgba(6,33,42,0.85) 0%, rgba(4,22,28,0.95) 100%),
+    url('https://images.unsplash.com/photo-1543637005-4d639a4e160c?q=80&w=1968&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(212,175,55,.4);
   border-top: 4px solid #D4AF37;
   border-radius: 28px; padding: 32px 40px;
@@ -408,7 +412,7 @@
   .statLine { display: block; height: 24px; width: 1px; background: rgba(255,255,255,0.1); }
   
   /* Services Card */
-  .servicesOverlay { padding: 80px 24px 32px; }
+  .servicesOverlay { padding: 40px 24px 32px; }
   .servicesCard .cardTitle { font-size: 1.6rem; margin-bottom: 16px; }
   .svcGrid { grid-template-columns:1fr 1fr; gap: 6px; margin-top: 12px; }
   .svcItem { padding: 6px 10px; gap: 6px; }
