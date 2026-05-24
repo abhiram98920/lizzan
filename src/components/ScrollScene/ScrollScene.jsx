@@ -190,22 +190,10 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
           </div>
         </section>
 
-        {/* ── ABOUT PANEL (TOUR BUS CARD) ────────────────────── */}
+        {/* ── ABOUT PANEL (MODERN CARD) ──────────────────────── */}
         <section ref={aboutRef} id="about" className={`${s.panel} ${s.leftPanel}`}>
-          <div className={`${s.premiumCard} ${s.busCard}`}>
-            
-            <div className={s.busBranding}>
-              <Logo className={s.busLogo} textFill="#ffffff" fill="#D4AF37" />
-              <div className={s.busWindows}>
-                <div className={`${s.window} ${s.driverWindow}`}><span className={s.steering}>🛞</span></div>
-                <div className={`${s.window} ${s.passengerWindow}`} />
-                <div className={s.window}/>
-                <div className={s.window}/>
-                <div className={s.window}/>
-              </div>
-            </div>
-
-            <div className={s.busContent}>
+          <div className={`${s.premiumCard} ${s.aboutCard}`}>
+            <div className={s.aboutOverlay}>
               <span className={s.tag}>About Us</span>
               <h2 className={s.cardTitle}>Your Journey,<br />Our Expertise</h2>
               <p className={s.cardBody}>
@@ -221,12 +209,6 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
                 <div className={s.stat}><strong><span ref={stat3Ref}>0</span><span>yr</span></strong><em>Experience</em></div>
               </div>
             </div>
-
-            <div className={s.busWheels}>
-              <div className={s.wheel} />
-              <div className={s.wheel} />
-            </div>
-            
           </div>
         </section>
 

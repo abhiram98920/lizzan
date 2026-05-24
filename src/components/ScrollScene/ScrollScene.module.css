@@ -219,58 +219,29 @@
   transform: translateY(-4px);
 }
 
-/* Tour Bus Card (About Us) */
-.busCard {
-  background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.92) 100%);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255,255,255,0.8);
-  box-shadow: 
-    0 24px 64px rgba(0,0,0,.2), 
-    inset 0 1px 0 rgba(255,255,255,1);
-  max-width: 800px; /* Even wider bus */
-  border-radius: 32px 32px 16px 16px; /* Bus roof curve */
-}
-
-/* Bus Mockup Header (Windows & Branding) */
-.busBranding {
-  background: #082B36;
-  padding: 24px 40px;
-  border-radius: 32px 32px 0 0;
-  display: flex; align-items: center; justify-content: space-between;
-  position: relative;
+/* Modern About Us Card */
+.aboutCard {
+  max-width: 800px; width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border-radius: 28px;
   overflow: hidden;
-}
-.busBranding::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
-  background: linear-gradient(90deg, #D4AF37, #F0D682); /* Gold stripe */
-}
-.busLogo { height: 32px; width: auto; filter: brightness(0) invert(1); z-index: 2; position: relative; }
-
-.busWindows { display: flex; gap: 8px; z-index: 2; position: relative; }
-.window { width: 44px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(4px); position: relative; display: flex; align-items: center; justify-content: center; }
-.driverWindow { border-right: 4px solid rgba(255,255,255,0.2); }
-.steering { font-size: 1.2rem; opacity: 0.2; }
-
-.busContent {
-  padding: 40px 48px 48px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-/* Bus Tyres -> Abstract UI Dots */
-.busWheels {
-  position: absolute; bottom: -16px; left: 80px; right: 80px;
-  display: flex; justify-content: space-between; pointer-events: none; z-index: 10;
+.aboutOverlay {
+  background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 40%, rgba(6,33,42,0.2) 100%);
+  padding: 180px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.wheel {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: rgba(0,0,0,0.8); border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  backdrop-filter: blur(4px);
-}
-.wheel::after {
-  content: ''; position: absolute; inset: 10px;
-  background: rgba(255,255,255,0.1); border-radius: 50%;
-}
+
+.aboutCard .cardTitle { color: #fff; text-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+.aboutCard .cardBody { color: rgba(255,255,255,0.85); text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+
 
 /* Cruise Ship Card (Services) */
 .shipCard {
@@ -323,12 +294,12 @@
 }
 
 /* Stats */
-.statsRow { display:flex; align-items:center; padding-top:24px; border-top:1px solid rgba(0,0,0,.08); }
+.statsRow { display:flex; align-items:center; padding-top:24px; border-top:1px solid rgba(255,255,255,.1); }
 .stat { flex:1; text-align:center; }
 .stat strong { display:block; font-size:2.2rem; font-weight:900; color:#D4AF37; line-height:1; }
 .stat strong span { font-size:1.2rem; }
-.stat em { display:block; font-style:normal; font-size:0.75rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:#777; margin-top:4px; }
-.statLine { width:1px; height:44px; background:rgba(0,0,0,.08); flex-shrink:0; }
+.stat em { display:block; font-style:normal; font-size:0.75rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-top:4px; }
+.statLine { width:1px; height:44px; background:rgba(255,255,255,.1); flex-shrink:0; }
 
 /* Services grid */
 .svcGrid {
@@ -452,20 +423,16 @@
   .cardTitle { font-size: 1.4rem; margin-bottom: 8px; }
   .cardBody { font-size: 0.8rem; margin-bottom: 12px; line-height: 1.4; }
   
-  /* Bus Card */
-  .busBranding { padding: 12px 16px; border-radius: 16px 16px 0 0; }
-  .busWindows { display: none; }
-  .busLogo { height: 18px; }
-  .busContent { padding: 16px 16px 24px; }
-  .busWheels { left: 20px; right: 20px; bottom: -8px; }
-  .wheel { width: 16px; height: 16px; }
+  /* About Card */
+  .aboutOverlay { padding: 120px 24px 32px; }
+  .aboutCard .cardTitle { font-size: 1.8rem; }
   
   /* Stats Row - Horizontal and tiny */
-  .statsRow { flex-direction: row; gap: 8px; align-items: center; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 12px; }
+  .statsRow { flex-direction: row; gap: 8px; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; }
   .stat { border-top: none; padding-top: 0; }
   .stat strong { font-size: 1.2rem; }
   .stat em { font-size: 0.6rem; margin-top: 2px; }
-  .statLine { display: block; height: 24px; width: 1px; }
+  .statLine { display: block; height: 24px; width: 1px; background: rgba(255,255,255,0.1); }
   
   /* Ship Card */
   .shipContent { padding: 16px 16px 36px 16px; }
