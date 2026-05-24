@@ -212,15 +212,10 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
           </div>
         </section>
 
-        {/* ── SERVICES PANEL (SHIP CARD) ─────────────────────── */}
+        {/* ── SERVICES PANEL (MODERN CARD) ─────────────────────── */}
         <section ref={servicesRef} id="services" className={`${s.panel} ${s.rightPanel}`}>
-          <div className={`${s.premiumCard} ${s.shipCard}`}>
-            <div className={s.shipTop}>
-              <div className={s.smokeStack} />
-              <div className={s.smokeStack} />
-            </div>
-            
-            <div className={s.shipContent}>
+          <div className={`${s.premiumCard} ${s.servicesCard}`}>
+            <div className={s.servicesOverlay}>
               <span className={s.tag}>What We Do</span>
               <h2 className={s.cardTitle}>Complete Travel Solutions</h2>
               <div className={s.svcGrid}>
@@ -231,14 +226,6 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
                 </div>
               ))}
               </div>
-            </div>
-            
-            <div className={s.shipPortholes}>
-              <div className={s.porthole} />
-              <div className={s.porthole} />
-              <div className={s.porthole} />
-              <div className={s.porthole} />
-              <div className={s.porthole} />
             </div>
           </div>
         </section>

@@ -243,55 +243,28 @@
 .aboutCard .cardBody { color: rgba(255,255,255,0.85); text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
 
 
-/* Cruise Ship Card (Services) */
-.shipCard {
-  background: linear-gradient(145deg, rgba(6,33,42,0.98) 0%, rgba(3,17,21,0.9) 100%);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 24px 64px rgba(0,0,0,.3);
-  max-width: 760px; width: 100%;
-  /* Ship Hull Shape: Flat top, curved hull at bottom */
-  border-radius: 12px 12px 200px 40px; 
-  padding: 0;
+/* Modern Services Card */
+.servicesCard {
+  max-width: 800px; width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border-radius: 28px;
   overflow: hidden;
-  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-.shipTop {
-  display: flex; gap: 16px; justify-content: center;
-  padding-top: 16px;
-}
-.smokeStack {
-  width: 24px; height: 32px;
-  background: rgba(212,175,55,0.5);
-  border-radius: 4px 4px 0 0;
-  position: relative; backdrop-filter: blur(4px);
-}
-.smokeStack::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: rgba(0,0,0,0.8); border-radius: 4px 4px 0 0;
+.servicesOverlay {
+  background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 50%, rgba(6,33,42,0.3) 100%);
+  padding: 140px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.shipContent {
-  padding: 24px 44px 72px 44px; /* extra bottom padding for portholes */
-}
-.shipCard .cardTitle { color: #fff; }
-.shipCard .tag { color: #F0D682; }
-
-/* Ship Waterline & Portholes -> Abstract */
-.shipCard::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 8px;
-  background: rgba(212,175,55,0.4); 
-}
-.shipPortholes {
-  position: absolute; bottom: 32px; left: 40px; display: flex; gap: 24px;
-}
-.porthole {
-  width: 16px; height: 16px; border-radius: 50%;
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: none;
-}
+.servicesCard .cardTitle { color: #fff; text-shadow: 0 4px 16px rgba(0,0,0,0.5); margin-bottom: 24px; }
+.servicesCard .tag { color: #F0D682; }
 
 /* Stats */
 .statsRow { display:flex; align-items:center; padding-top:24px; border-top:1px solid rgba(255,255,255,.1); }
@@ -413,7 +386,7 @@
   .centerPanel { padding: 70px 16px 16px; }
   .heroPanel { align-items: center; justify-content: center; text-align: center; }
   .heroContent { align-items: center; }
-  .heroTitle { font-size:clamp(2.2rem,8vw,3rem); margin-bottom: 12px; }
+  .heroTitle { font-size:clamp(3rem,12vw,4rem); margin-bottom: 12px; }
   .heroSub { font-size: 0.85rem; margin-bottom: 20px; line-height: 1.4; }
   .heroActions { margin-bottom: 32px; justify-content: center; }
   .leftPanel,.rightPanel { justify-content:center; }
@@ -434,10 +407,9 @@
   .stat em { font-size: 0.6rem; margin-top: 2px; }
   .statLine { display: block; height: 24px; width: 1px; background: rgba(255,255,255,0.1); }
   
-  /* Ship Card */
-  .shipContent { padding: 16px 16px 36px 16px; }
-  .shipPortholes { left: 16px; bottom: 12px; gap: 8px; }
-  .porthole { width: 10px; height: 10px; }
+  /* Services Card */
+  .servicesOverlay { padding: 80px 24px 32px; }
+  .servicesCard .cardTitle { font-size: 1.6rem; margin-bottom: 16px; }
   .svcGrid { grid-template-columns:1fr 1fr; gap: 6px; margin-top: 12px; }
   .svcItem { padding: 6px 10px; gap: 6px; }
   .svcIcon { font-size: 0.9rem; }
