@@ -97,3 +97,35 @@
   .infoBar { display: none; }
   .menuItem a:hover { transform: translateX(16px); }
 }
+
+/* Search Input */
+.searchWrap {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 6px 12px;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s, border-color 0.3s;
+}
+.searchWrap:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.searchWrap input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  width: 180px;
+}
+.searchWrap input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.searchIcon {
+  color: #fff;
+}
