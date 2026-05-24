@@ -1,0 +1,106 @@
+.page {
+  min-height: 100vh;
+  background: #051a21;
+  color: #fff;
+  padding: 120px 5% 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero {
+  max-width: 800px;
+  background: rgba(8, 43, 54, 0.8);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 64px 48px;
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.iconWrap {
+  font-size: 4rem;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #FFF 0%, #F0D682 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 40px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnRed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D4AF37;
+  color: #082B36;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  transition: background .2s, transform .2s;
+}
+.btnRed:hover { background: #F0D682; transform: translateY(-2px); }
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: background .2s, border-color .2s;
+}
+.btnOutline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
+}
+
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #051a21;
+  color: #fff;
+  gap: 24px;
+}
+.notFound a { color: #D4AF37; }
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 600px) {
+  .actions { flex-direction: column; width: 100%; }
+  .btnRed, .btnOutline { width: 100%; }
+  .hero { padding: 40px 24px; }
+}

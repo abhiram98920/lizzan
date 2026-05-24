@@ -1,12 +1,30 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import Logo from '../Logo'
 import s from './Navbar.module.css'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [timeStr, setTimeStr] = useState('')
   const menuRef = useRef(null)
   const linksRef = useRef([])
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const updateTime = () => {
+      setTimeStr(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
+    }
+    updateTime()
+    const intv = setInterval(updateTime, 60000)
+    return () => clearInterval(intv)
+  }, [])
 
   useEffect(() => {
     if (isOpen) {
@@ -22,11 +40,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''}`}>
+      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''} ${scrolled ? s.navScrolled : ''}`}>
         <div className={s.inner}>
-          <a href="#" className={s.logoWrap} onClick={() => setIsOpen(false)}>
+          <Link to="/" className={s.logoWrap} onClick={() => setIsOpen(false)}>
             <Logo className={s.logo} textFill="#ffffff" />
-          </a>
+          </Link>
+          
+          {scrolled && (
+            <div className={s.infoBar}>
+              <span>🌤️ 28°C Cochin</span>
+              <span className={s.sep}>|</span>
+              <span>🕒 {timeStr}</span>
+            </div>
+          )}
           
           <button className={`${s.hamburger} ${isOpen ? s.hamActive : ''}`} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
             <span className={s.line} />
@@ -40,13 +66,13 @@ export default function Navbar() {
           <ul className={s.menuList}>
             {['Packages', 'Destinations', 'About', 'Services', 'Contact'].map((item, i) => (
               <li key={item} className={s.menuItem}>
-                <a 
-                  href={`#${item.toLowerCase()}`} 
+                <Link 
+                  to={item === 'Home' ? '/' : `/#${item.toLowerCase()}`} 
                   onClick={() => setIsOpen(false)}
                   ref={el => linksRef.current[i] = el}
                 >
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

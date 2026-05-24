@@ -8,6 +8,8 @@ import Logo from '../Logo'
 import WorldClocks from '../WorldClocks/WorldClocks'
 import WeatherWidget from '../WeatherWidget/WeatherWidget'
 import ContactMap from '../ContactMap/ContactMap'
+import { Link } from 'react-router-dom'
+import { SERVICES } from '../../data'
 import mapImg   from '../../assets/layer1.png'
 import s from './ScrollScene.module.css'
 
@@ -16,12 +18,7 @@ gsap.registerPlugin(ScrollTrigger)
 const vw = p => window.innerWidth  * (p / 100)
 const vh = p => window.innerHeight * (p / 100)
 
-const SERVICES = [
-  ['✈','Flight Tickets'],['🌍','International Tours'],['🇮🇳','Domestic Tours'],
-  ['👥','Group Tours'],['✨','Customised Tours'],['💼','Corporate Tours'],
-  ['👨‍👩‍👧','Family Tours'],['🕌','Pilgrim Tours'],['🚢','Cruise Tours'],
-  ['🏨','Hotels & Houseboats'],['🛡️','Travel Insurance'],['📋','Visa Assistance'],
-]
+// SERVICES array removed as it is imported from data.js
 
 export default function ScrollScene({ planeWrapRef, planeRef }) {
   const wrapRef   = useRef(null)
@@ -178,6 +175,10 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 Talk to Us
               </a>
+              <button className={s.btnOutline} onClick={() => document.getElementById('cd')?.focus()}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                Search Location
+              </button>
             </div>
 
             <div className={s.scrollNudge}>
@@ -221,11 +222,11 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
               <span className={s.tag}>What We Do</span>
               <h2 className={s.cardTitle}>Complete Travel Solutions</h2>
               <div className={s.svcGrid}>
-              {SERVICES.map(([icon, name]) => (
-                <div key={name} className={s.svcItem}>
+              {SERVICES.map(([icon, name, id]) => (
+                <Link to={`/service/${id}`} key={id} className={s.svcItem}>
                   <span className={s.svcIcon}>{icon}</span>
                   <span className={s.svcName}>{name}</span>
-                </div>
+                </Link>
               ))}
               </div>
             </div>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Lizzan Holidays</title>
+  <link>https://abhiram98920.github.io/lizzan/</link>
+  <description>Premium domestic and international travel packages.</description>
+  
+  <item>
+    <title>Explore Kerala Backwaters</title>
+    <link>https://abhiram98920.github.io/lizzan/#/destination/kerala</link>
+    <description>Experience the serene backwaters of Kerala with Lizzan Holidays.</description>
+  </item>
+  
+  <item>
+    <title>Luxury in Dubai</title>
+    <link>https://abhiram98920.github.io/lizzan/#/destination/dubai</link>
+    <description>Marvel at futuristic skyscrapers and desert safaris in Dubai.</description>
+  </item>
+</channel>
+</rss>
