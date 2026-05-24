@@ -65,10 +65,10 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
           pin: canvasRef.current,
           anticipatePin: 1,
           snap: {
-            snapTo: "labels", // Snaps to the closest label for stability
-            duration: { min: 0.3, max: 0.8 },
-            delay: 0.15,
-            ease: "power2.out"
+            snapTo: "labelsDirectional", // Snaps to the next label on a single scroll
+            duration: { min: 0.2, max: 0.6 },
+            delay: 0,
+            ease: "power1.inOut"
           },
           onUpdate(self) {
             gsap.set(barRef.current, { scaleX: self.progress })
@@ -84,24 +84,24 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
         .to(mapRef.current,  { scale: 1.2, x: vw(5), duration: 1, ease: 'power2.inOut' }, "<")
         .fromTo(planeWrapRef.current,
           { x: vw(25), y: -vh(5), rotation: 5, scaleX: 1.0, scaleY: 1.0 },
-          { x: vw(35), y: vh(10), rotation: 15, scaleX: 0.9, scaleY: 0.9, duration: 1, ease: 'power2.inOut' }, 
+          { x: -vw(12), y: -vh(18), rotation: -15, scaleX: -0.85, scaleY: 0.85, duration: 1, ease: 'power2.inOut' }, 
           "<"
         )
         .to(aboutRef.current,{ autoAlpha: 1, x: 0, duration: 0.5, ease: 'power2.inOut' }, "-=0.5")
 
       tl.addLabel("about")
-      // PAUSE AT ABOUT (Plane drifts slowly on the right)
-      tl.to(planeWrapRef.current, { x: vw(30), y: vh(15), rotation: 10, duration: 4, ease: 'none' })
+      // PAUSE AT ABOUT (Plane drifts slowly on the top right of the card)
+      tl.to(planeWrapRef.current, { x: -vw(15), y: -vh(15), rotation: -10, duration: 2, ease: 'none' })
 
       // About -> Services
       tl.to(aboutRef.current,{ autoAlpha: 0, x: -60, duration: 0.5, ease: 'power2.inOut' })
         .to(mapRef.current,  { scale: 1.7, x: vw(12), y: -vh(5), duration: 1, ease: 'power2.inOut' }, "<")
-        .to(planeWrapRef.current,{ x: -vw(35), y: -vh(5), rotation: -20, scaleX: -0.9, scaleY: 0.9, duration: 1, ease: 'power2.inOut' }, "<")
+        .to(planeWrapRef.current,{ x: vw(15), y: -vh(12), rotation: 10, scaleX: 0.85, scaleY: 0.85, duration: 1, ease: 'power2.inOut' }, "<")
         .to(servicesRef.current, { autoAlpha: 1, x: 0, duration: 0.5, ease: 'power2.inOut' }, "-=0.5")
 
       tl.addLabel("services")
       // PAUSE AT SERVICES (Plane drifts slowly on the left)
-      tl.to(planeWrapRef.current, { x: -vw(30), y: -vh(10), rotation: -15, duration: 4, ease: 'none' })
+      tl.to(planeWrapRef.current, { x: vw(18), y: -vh(8), rotation: 5, duration: 2, ease: 'none' })
 
       // Services -> Contact
       tl.to(servicesRef.current, { autoAlpha: 0, x: 60, duration: 0.5, ease: 'power2.inOut' })

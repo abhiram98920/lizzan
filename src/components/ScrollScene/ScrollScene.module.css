@@ -1,7 +1,7 @@
 /* ScrollScene.module.css */
 
-/* ── Scroll wrapper: 600vh (Perfect balance for snaps and reading) ──────── */
-.wrapper { height: 600vh; position: relative; background: #051a21; }
+/* ── Scroll wrapper: 350vh (Requires fewer scrolls) ──────── */
+.wrapper { height: 350vh; position: relative; background: #051a21; }
 
 /* ── Canvas (GSAP will set position:fixed when pinning) ──────────── */
 .canvas { width: 100%; height: 100vh; overflow: hidden; background: #051a21; }
