@@ -8,6 +8,8 @@ import s from './Navbar.module.css'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [timeStr, setTimeStr] = useState('')
+  const [scrolled, setScrolled] = useState(false)
+  const [scrollDir, setScrollDir] = useState("up")
   const menuRef = useRef(null)
   const linksRef = useRef([])
   const navigate = useNavigate()
@@ -27,6 +29,24 @@ export default function Navbar() {
       }
     }
   }
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 50)
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setScrollDir("down")
+      } else if (currentScrollY < lastScrollY) {
+        setScrollDir("up")
+      }
+      lastScrollY = currentScrollY > 0 ? currentScrollY : 0
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const updateTime = () => {
@@ -51,7 +71,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''}`}>
+      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''} ${scrolled ? s.navScrolled : ''} ${scrollDir === 'down' ? s.navHidden : s.navVisible}`}>
         <div className={s.inner}>
           <Link to="/" className={s.logoWrap} onClick={() => setIsOpen(false)}>
             <Logo className={s.logo} textFill="#ffffff" />

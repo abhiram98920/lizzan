@@ -1,10 +1,19 @@
 .nav {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 2000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
   padding: 16px 0;
   background: transparent;
-  transition: padding 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease, background 0.4s ease;
+  will-change: transform;
 }
-/* .navScrolled removed since it's no longer fixed */
+.navScrolled {
+  background: rgba(5, 26, 33, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.navHidden { transform: translateY(-100%); }
+.navVisible { transform: translateY(0); }
 
 .infoBar {
   display: flex;
