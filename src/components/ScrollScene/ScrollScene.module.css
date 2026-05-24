@@ -55,7 +55,7 @@
 .panel {
   position: absolute; inset: 0; z-index: 10;
   display: flex; align-items: center;
-  padding: 190px 64px 64px; /* Increased top padding to clear larger navbar */
+  padding: 120px 64px 40px; /* Reduced top padding to properly center the card */
   pointer-events: none;
 }
 .leftPanel   { justify-content: flex-start; }
@@ -228,12 +228,12 @@
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: none;
 }
 
 .aboutOverlay {
   background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 40%, rgba(6,33,42,0.2) 100%);
-  padding: 180px 48px 48px;
+  padding: 100px 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -252,12 +252,12 @@
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: none;
 }
 
 .servicesOverlay {
   background: linear-gradient(to top, rgba(6,33,42,0.98) 0%, rgba(6,33,42,0.85) 50%, rgba(6,33,42,0.3) 100%);
-  padding: 140px 48px 48px;
+  padding: 100px 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
