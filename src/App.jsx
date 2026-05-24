@@ -2,7 +2,6 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-import FloatingWidget from './components/FloatingWidget/FloatingWidget'
 import Preloader from './components/Preloader/Preloader'
 import Home from './pages/Home'
 import ServiceDetails from './pages/ServiceDetails/ServiceDetails'
@@ -34,7 +33,6 @@ export default function App() {
           <Route path="/destination/:id" element={<DestinationDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <FloatingWidget />
         <Footer />
       </HashRouter>
     </HelmetProvider>

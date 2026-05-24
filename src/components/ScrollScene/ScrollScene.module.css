@@ -74,6 +74,19 @@
   pointer-events: auto;
 }
 
+.clocks {
+  position: absolute; right: 60px; top: 40%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 40px;
+  z-index: 50;
+}
+.clockWrapper {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.clockWrapper:hover {
+  transform: scale(1.15);
+}
+
 .clocksWrap {
   position: absolute;
   right: 64px;

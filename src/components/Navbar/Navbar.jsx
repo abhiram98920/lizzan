@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
+import { DESTINATIONS } from '../../data'
 import Logo from '../Logo'
 import s from './Navbar.module.css'
 
@@ -9,6 +10,23 @@ export default function Navbar() {
   const [timeStr, setTimeStr] = useState('')
   const menuRef = useRef(null)
   const linksRef = useRef([])
+  const navigate = useNavigate()
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      const term = e.target.value.toLowerCase().trim()
+      if (!term) return
+      
+      const dest = DESTINATIONS.find(d => d.name.toLowerCase().includes(term))
+      if (dest) {
+        navigate('/destination/' + dest.id)
+        e.target.value = ''
+        setIsOpen(false)
+      } else {
+        alert('Destination not found. Try Kerala, Dubai, Bali, etc.')
+      }
+    }
+  }
 
   useEffect(() => {
     const updateTime = () => {
@@ -41,7 +59,7 @@ export default function Navbar() {
           
           <div className={s.searchWrap}>
             <svg className={s.searchIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input id="search-dest" type="text" placeholder="Search destinations..." />
+            <input id="search-dest" type="text" placeholder="Search destinations..." onKeyDown={handleSearch} />
           </div>
 
           <div className={s.infoBar}>
