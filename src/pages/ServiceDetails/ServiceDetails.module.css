@@ -58,10 +58,10 @@
   font-weight: 800;
   font-size: 0.95rem;
   padding: 14px 28px;
-  border-radius: 50px;
-  transition: background .2s, transform .2s;
+  border-radius: 8px;
+  transition: background .2s, transform .2s, box-shadow .2s;
 }
-.btnRed:hover { background: #F0D682; transform: translateY(-2px); }
+.btnRed:hover { background: #F0D682; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4); }
 
 .btnOutline {
   display: inline-flex;
@@ -73,13 +73,13 @@
   font-weight: 600;
   font-size: 0.95rem;
   padding: 14px 28px;
-  border-radius: 50px;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: background .2s, border-color .2s;
+  border-radius: 8px;
+  transition: background .2s, border-color .2s, transform .2s;
 }
 .btnOutline:hover {
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.6);
+  transform: translateY(-3px);
 }
 
 .notFound {

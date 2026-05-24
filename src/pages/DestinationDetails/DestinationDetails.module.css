@@ -42,7 +42,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 6px 16px;
-  border-radius: 50px;
+  border-radius: 8px;
   margin-bottom: 24px;
 }
 
@@ -80,10 +80,10 @@
   font-weight: 800;
   font-size: 0.95rem;
   padding: 14px 28px;
-  border-radius: 50px;
-  transition: background .2s, transform .2s;
+  border-radius: 8px;
+  transition: background .2s, transform .2s, box-shadow .2s;
 }
-.btnRed:hover { background: #F0D682; transform: translateY(-2px); }
+.btnRed:hover { background: #F0D682; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4); }
 
 .btnOutline {
   display: inline-flex;
@@ -95,7 +95,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   padding: 14px 28px;
-  border-radius: 50px;
+  border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.3);
   transition: background .2s, border-color .2s;
   backdrop-filter: blur(4px);
@@ -106,21 +106,104 @@
 }
 
 .bodyContent {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 80px 24px;
-  text-align: center;
+  text-align: left;
 }
-.bodyContent h2 {
-  font-family: 'Playfair Display', serif;
+.section { margin-bottom: 64px; text-align: center; }
+.section h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", serif;
   font-size: 2.5rem;
   margin-bottom: 24px;
   color: #D4AF37;
 }
-.bodyContent p {
+.section p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: rgba(255,255,255,0.8);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 64px;
+}
+.gridCol h3 {
+  font-size: 1.5rem;
+  color: #D4AF37;
+  margin-bottom: 24px;
+}
+.exploreList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.ideasList { display: flex; flex-direction: column; gap: 16px; }
+
+.cardItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.cardItem:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.checkIcon { color: #D4AF37; font-weight: bold; }
+
+.itineraryList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.itineraryDay {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.itineraryDay:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.dayBadge {
+  background: #D4AF37;
+  color: #082B36;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.dayContent h4 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.dayContent p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+@media(max-width: 768px) {
+  .gridContainer { grid-template-columns: 1fr; }
+  .itineraryDay { flex-direction: column; gap: 16px; }
 }
 
 .notFound {

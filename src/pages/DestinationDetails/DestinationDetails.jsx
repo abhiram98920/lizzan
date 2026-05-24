@@ -46,8 +46,47 @@ export default function DestinationDetails() {
       </div>
 
       <div className={s.bodyContent}>
-        <h2>Experience {dest.name} Like Never Before</h2>
-        <p>Our tailored packages to {dest.name} cover everything from flights, luxury stays, and guided sightseeing, ensuring a seamless holiday. Whether you are looking for a romantic honeymoon, an adventurous family trip, or a solo escape, we have the perfect itinerary for you.</p>
+        <div className={s.section}>
+          <h2>Experience {dest.name} Like Never Before</h2>
+          <p>Our tailored packages to {dest.name} cover everything from flights, luxury stays, and guided sightseeing, ensuring a seamless holiday. Whether you are looking for a romantic honeymoon, an adventurous family trip, or a solo escape, we have the perfect itinerary for you.</p>
+        </div>
+
+        <div className={s.gridContainer}>
+          <div className={s.gridCol}>
+            <h3>Things to Explore</h3>
+            <ul className={s.exploreList}>
+              {dest.explore?.map((item, i) => (
+                <li key={i} className={s.cardItem}>
+                  <span className={s.checkIcon}>✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={s.gridCol}>
+            <h3>Travel Ideas</h3>
+            <div className={s.ideasList}>
+              {dest.ideas?.map((idea, i) => (
+                <div key={i} className={s.cardItem}>{idea}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className={s.section}>
+          <h2>Sample Itinerary</h2>
+          <div className={s.itineraryList}>
+            {dest.itinerary?.map((day, i) => (
+              <div key={i} className={s.itineraryDay}>
+                <div className={s.dayBadge}>Day {day.day}</div>
+                <div className={s.dayContent}>
+                  <h4>{day.title}</h4>
+                  <p>{day.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

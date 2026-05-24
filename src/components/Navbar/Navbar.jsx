@@ -6,16 +6,9 @@ import s from './Navbar.module.css'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const [timeStr, setTimeStr] = useState('')
   const menuRef = useRef(null)
   const linksRef = useRef([])
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     const updateTime = () => {
@@ -40,19 +33,22 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''} ${scrolled ? s.navScrolled : ''}`}>
+      <nav className={`${s.nav} ${isOpen ? s.navOpen : ''}`}>
         <div className={s.inner}>
           <Link to="/" className={s.logoWrap} onClick={() => setIsOpen(false)}>
             <Logo className={s.logo} textFill="#ffffff" />
           </Link>
           
-          {scrolled && (
-            <div className={s.infoBar}>
-              <span>🌤️ 28°C Cochin</span>
-              <span className={s.sep}>|</span>
-              <span>🕒 {timeStr}</span>
-            </div>
-          )}
+          <div className={s.searchWrap}>
+            <svg className={s.searchIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input id="search-dest" type="text" placeholder="Search destinations..." />
+          </div>
+
+          <div className={s.infoBar}>
+            <span>🌤️ 28°C Cochin</span>
+            <span className={s.sep}>|</span>
+            <span>🕒 {timeStr}</span>
+          </div>
           
           <button className={`${s.hamburger} ${isOpen ? s.hamActive : ''}`} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
             <span className={s.line} />

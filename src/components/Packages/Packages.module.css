@@ -32,7 +32,7 @@
   position: relative; z-index: 2; padding: 48px;
   display: flex; flex-direction: column; height: 100%;
 }
-.pkgBadge { align-self: flex-start; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); color: #F0D682; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+.pkgBadge { align-self: flex-start; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); color: #F0D682; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 8px; margin-bottom: 20px; }
 .pkgTitle { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.1; }
 .pkgDesc { font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,.7); margin-bottom: 32px; max-width: 400px; }
 .pkgRoutes { list-style: none; margin-bottom: 40px; display: flex; flex-direction: column; gap: 12px; }
@@ -40,7 +40,8 @@
 .pkgRoutes li:hover { transform: translateX(8px); color: #fff; }
 .routeDot { width: 8px; height: 8px; border-radius: 50%; background: #D4AF37; transition: width 0.3s ease, background 0.3s ease, border-radius 0.3s ease; }
 .pkgRoutes li:hover .routeDot { width: 20px; border-radius: 4px; background: #F0D682; }
-.pkgCta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: #D4AF37; color: #082B36; text-decoration: none; font-weight: 800; font-size: 0.9rem; padding: 14px 28px; border-radius: 50px; transition: background .2s, transform .2s; align-self: flex-start; }
+.pkgCta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; background: #D4AF37; color: #082B36; text-decoration: none; font-weight: 800; font-size: 0.9rem; padding: 14px 28px; border-radius: 8px; transition: background .2s, transform .2s, box-shadow .2s; align-self: flex-start; }
+.pkgCta:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4); }
 .pkgCta:hover { background: #F0D682; transform: translateX(4px); }
 @media(max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 @media(max-width: 768px) { .section { padding: 80px 0; } .inner { padding: 0 20px; } .pkgContent { padding: 32px 24px; } }
