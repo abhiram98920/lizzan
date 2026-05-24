@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import s from './Footer.module.css'
 
@@ -20,27 +21,27 @@ export default function Footer() {
           <div className={s.col}>
             <h4>Company</h4>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Our Services</a></li>
-              <li><a href="#why-us">Why Choose Us</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Our Services</Link></li>
+              <li><Link to="/#why-us">Why Choose Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
           <div className={s.col}>
             <h4>Tours</h4>
             <ul>
-              <li><a href="#packages">International</a></li>
-              <li><a href="#packages">Domestic</a></li>
-              <li><a href="#destinations">Popular Destinations</a></li>
-              <li><a href="#packages">Customised Packages</a></li>
+              <li><Link to="/#packages">International</Link></li>
+              <li><Link to="/#packages">Domestic</Link></li>
+              <li><Link to="/#destinations">Popular Destinations</Link></li>
+              <li><Link to="/#packages">Customised Packages</Link></li>
             </ul>
           </div>
           <div className={s.col}>
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Cancellation Policy</a></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li><Link to="/terms">Terms & Conditions</Link></li>
+              <li><Link to="/cancellation">Cancellation Policy</Link></li>
             </ul>
           </div>
         </div>

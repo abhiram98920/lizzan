@@ -60,17 +60,25 @@ export default function Navbar() {
       <div ref={menuRef} className={s.menuOverlay}>
         <div className={s.menuInner}>
           <ul className={s.menuList}>
-            {['Packages', 'Destinations', 'About', 'Services', 'Contact'].map((item, i) => (
-              <li key={item} className={s.menuItem}>
-                <Link 
-                  to={item === 'Home' ? '/' : `/#${item.toLowerCase()}`} 
-                  onClick={() => setIsOpen(false)}
-                  ref={el => linksRef.current[i] = el}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
+            {['Home', 'Packages', 'Destinations', 'About', 'Services', 'Contact'].map((item, i) => {
+              let linkPath = '/'
+              if (item === 'About') linkPath = '/about'
+              else if (item === 'Services') linkPath = '/services'
+              else if (item === 'Contact') linkPath = '/contact'
+              else if (item !== 'Home') linkPath = `/#${item.toLowerCase()}`
+              
+              return (
+                <li key={item} className={s.menuItem}>
+                  <Link 
+                    to={linkPath} 
+                    onClick={() => setIsOpen(false)}
+                    ref={el => linksRef.current[i] = el}
+                  >
+                    {item}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
           
           <div className={s.menuFooter}>
