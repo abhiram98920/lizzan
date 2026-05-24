@@ -18,8 +18,8 @@ export default function Contact() {
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto' }}>Ready to start your next adventure? Reach out to our travel experts today.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '48px', alignItems: 'center', background: 'rgba(8, 43, 54, 0.5)', padding: '40px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', backgroundImage: "url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(5,26,33,0.95) 0%, rgba(5,26,33,0.7) 100%)' }} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '48px', alignItems: 'center', background: 'linear-gradient(135deg, rgba(5,26,33,0.95) 0%, rgba(5,26,33,0.4) 100%)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '40px', borderRadius: '16px', borderTop: '4px solid #D4AF37', backgroundImage: "url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=2000')", backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(5,26,33,0.95) 0%, rgba(5,26,33,0.4) 100%)', zIndex: 1, backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }} />
           
           <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div>
