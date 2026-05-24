@@ -6,7 +6,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Logo from '../Logo'
 import WorldClocks from '../WorldClocks/WorldClocks'
-import WeatherWidget from '../WeatherWidget/WeatherWidget'
 import ContactMap from '../ContactMap/ContactMap'
 import { Link } from 'react-router-dom'
 import { SERVICES } from '../../data'
@@ -182,10 +181,9 @@ export default function ScrollScene({ planeWrapRef, planeRef }) {
               <span className={s.nudgeText}>Scroll to discover</span>
             </div>
           </div>
-          {/* RIGHT CLOCKS & WEATHER */}
+          {/* RIGHT CLOCKS */}
           <div className={s.clocksWrap}>
             <WorldClocks />
-            <WeatherWidget />
           </div>
         </section>
 
